@@ -11243,3 +11243,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background: rgba(169, 57, 57, 0.758);
+}
