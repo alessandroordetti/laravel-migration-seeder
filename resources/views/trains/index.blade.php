@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trains</title>
-</head>
-<body>
+@extends('layouts.main')
 
-    @dump($getTime)
-    @dump($trains)
-
+@section('content')
     <div class="container">
+        <div class="row mb-5">
+                @foreach ($trains as $train)
+                <div class="col-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$train->trainCode}}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+        </div>
+
         <div class="row">
             <div class="col-12">
-                @foreach ($getTime as $element)
-                    <h1>Il treno in partenza il {{$element->departureTime}} parte al binario 4</h1>
-                @endforeach
-            </div>
-
-            <div>
-                <h2>I treni in partenza oggi sono:</h2>
-                @foreach ($trains as $train)
-                    {{$train->trainCode}}
-                @endforeach
+                {{$trains->links()}}
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
