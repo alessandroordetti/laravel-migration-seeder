@@ -10,7 +10,7 @@ class TrainController extends Controller
 {
     public function index(){
         $trainsModel = new Train();
-        $trains = $trainsModel::paginate(20);
+        $trains = $trainsModel::orderBy('departureTime', 'asc')->paginate(20);
 
         $getTime = Train::where('departureTime', '=' , '2022-05-13 00:00:00')->get();   
 
