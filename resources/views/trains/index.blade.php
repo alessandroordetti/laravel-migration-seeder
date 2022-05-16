@@ -5,10 +5,10 @@
         <div class="row mb-5">
                 @foreach ($trains as $train)
                     <div class="col-3">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card mb-3" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$train->trainCode}}</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Il treno: {{$train->trainCode}}</h5>
+                                    <p class="card-text">Treno in partenza da {{$train->departureStation}} alle ore {{$train->departureTime}} e in arrivo a {{$train->arrivalStation}} alle ore {{$train->arrivalTime}}</p>
                                     <a href='{{url("/$train->id")}}' class="btn btn-primary">Vai ai dettagli del treno</a>
                                 </div>
                             </div>

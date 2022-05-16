@@ -11244,5 +11244,9 @@ textarea.form-control-lg {
   }
 }
 body {
-  background: rgba(169, 57, 57, 0.758);
+  background: rgba(241, 20, 20, 0.758);
+}
+
+.card {
+  height: 250px;
 }
